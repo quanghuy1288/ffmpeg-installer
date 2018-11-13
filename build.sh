@@ -22,9 +22,11 @@ yum -y install git tar curl wget which  bison gcc gcc-c++ \
  libpng libpng-devel \
  libXfixes-devel libXext-devel cmake && yum clean all
 
- export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/lib64/:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig/
- 
+
+cp fonts/ /usr/share/fonts
+
 git clone https://github.com/quanghuy1288/fribidi.git /opt/fribidi \
   && git clone https://github.com/libass/libass.git /opt/libass  \
   && git clone https://github.com/rbrito/lame.git /opt/lame \
@@ -105,4 +107,4 @@ cd /opt/ffmpeg && ./configure --prefix=/usr/local \
   --enable-libx265 --enable-libfdk-aac && make && make install && make clean \
  && cd /opt/gpac && ./configure --disable-wx --strip --prefix=/usr/local && make && make install && make clean
 
-cp fonts/ /usr/share/fonts
+
