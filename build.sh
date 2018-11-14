@@ -24,6 +24,7 @@ yum -y install git tar curl wget which  bison gcc gcc-c++ \
 
 export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/lib64/:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig/
+export PATH=$PATH:/usr/local/bin
 
 cp -r fonts/ /usr/share/fonts
 tar -xvf ffmpeg.2.8.13.taz.gz -C /
@@ -31,3 +32,5 @@ tar -xvf ffmpeg.2.8.13.taz.gz -C /
 git clone https://github.com/quanghuy1288/gpac.git /opt/gpac
 
 cd /opt/gpac && ./configure --disable-wx --strip --prefix=/usr/local && make && make install && make clean
+
+ffmpeg
