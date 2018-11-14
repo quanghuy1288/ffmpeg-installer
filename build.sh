@@ -22,10 +22,8 @@ yum -y install git tar curl wget which  bison gcc gcc-c++ \
  libpng libpng-devel \
  libXfixes-devel libXext-devel cmake && yum clean all
 
-export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/lib64/:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig/
-export PATH=$PATH:/usr/local/bin
 
+source env_source
 cp -r fonts/ /usr/share/fonts
 tar -xvf ffmpeg.2.8.13.taz.gz -C /
 
